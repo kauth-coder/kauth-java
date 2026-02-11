@@ -1,6 +1,4 @@
 package cn.kauth.sdk;
-
-
 import cn.kauth.sdk.enums.KauthSignEnums;
 import cn.kauth.sdk.info.ServiceConfig;
 import cn.kauth.sdk.info.request.InitConfigReq;
@@ -8,9 +6,7 @@ import cn.kauth.sdk.tools.StringUtils;
 
 import java.util.Objects;
 
-
 public class KauthCoreCore {
-
 
     private String deviceId;
 
@@ -65,29 +61,9 @@ public class KauthCoreCore {
         return "ok";
     }
 
-
     public String getDeviceId() {
         return deviceId;
     }
-
-
-    /**
-     * 简单的MD5摘要
-     */
-    private String md5(String input) {
-        try {
-            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-            byte[] digest = md.digest(input.getBytes());
-            StringBuilder sb = new StringBuilder();
-            for (byte b : digest) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (Exception ignored) {
-            return input;
-        }
-    }
-
 
     public ServiceConfig getServiceConfig() {
         return serviceConfig;
