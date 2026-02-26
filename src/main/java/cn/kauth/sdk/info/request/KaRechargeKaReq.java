@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-23
- * @Description: 以卡充卡请求
+ * CreateTime: 2025-09-23
+ * Description: 以卡充卡请求
  */
 @Data
 public class KaRechargeKaReq {

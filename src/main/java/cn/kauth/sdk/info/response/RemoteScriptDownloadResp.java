@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-24
- * @Description: 远程脚本下载地址响应
+ * CreateTime: 2025-09-24
+ * Description: 远程脚本下载地址响应
  */
 @Data
 public class RemoteScriptDownloadResp {

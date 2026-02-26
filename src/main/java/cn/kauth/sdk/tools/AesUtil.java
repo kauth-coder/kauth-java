@@ -10,7 +10,7 @@ import java.util.Base64;
  * 使用ECB模式和零填充
  *
  * @author Kauth.cn
- * @date 2025/4/4
+ * date 2025/4/4
  */
 public class AesUtil {
 

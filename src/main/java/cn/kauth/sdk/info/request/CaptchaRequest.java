@@ -6,7 +6,7 @@ import lombok.Data;
  * 图形验证码请求
  *
  * @author SongLongKuan
- * @date 2025/4/4
+ * date 2025/4/4
  */
 @Data
 public class CaptchaRequest {

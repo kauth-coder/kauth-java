@@ -6,7 +6,7 @@ import lombok.Data;
  * 热更新响应
  *
  * @author SongLongKuan
- * @date 2025/12/9 14:10
+ * date 2025/12/9 14:10
  */
 @Data
 public class CheeseHotUpdateResp {

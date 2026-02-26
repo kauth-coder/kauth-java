@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 响应结果
  * @author Kauth.cn
- * @date 2025/9/17 21:10
+ * date 2025/9/17 21:10
  */
 @Data
 public class ApiResult<T> {

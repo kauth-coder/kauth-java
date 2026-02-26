@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-22
- * @Description: 获取自定义配置响应
+ * CreateTime: 2025-09-22
+ * Description: 获取自定义配置响应
  */
 @Data
 public class GetCustomConfigResp {

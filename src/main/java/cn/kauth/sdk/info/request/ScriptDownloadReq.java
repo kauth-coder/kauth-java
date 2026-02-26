@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-24
- * @Description: 获取脚本下载数据请求
+ * CreateTime: 2025-09-24
+ * Description: 获取脚本下载数据请求
  */
 @Data
 public class ScriptDownloadReq {

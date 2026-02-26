@@ -13,7 +13,7 @@ import java.util.Map;
  * RSA非对称加密解密工具类
  *
  * @author: VerifyHub
- * @CreateTime: 2025-09-18
+ * CreateTime: 2025-09-18
  */
 public class RsaTools {
 
@@ -101,7 +101,6 @@ public class RsaTools {
      * @param plainText    明文
      * @param publicKeyStr 公钥字符串（Base64编码）
      * @return 加密后的密文（Base64编码）
-     * @throws Exception 加密异常
      */
     public static String encryptByPublicKey(String plainText, String publicKeyStr) {
         try {
@@ -182,7 +181,6 @@ public class RsaTools {
      * @param plainText     明文
      * @param privateKeyStr 私钥字符串（Base64编码）
      * @return 加密后的密文（Base64编码）
-     * @throws Exception 加密异常
      */
     public static String encryptByPrivateKey(String plainText, String privateKeyStr) {
         try {
@@ -222,7 +220,6 @@ public class RsaTools {
      * @param cipherText    密文（Base64编码）
      * @param privateKeyStr 私钥字符串（Base64编码）
      * @return 解密后的明文
-     * @throws Exception 解密异常
      */
     public static String decryptByPrivateKey(String cipherText, String privateKeyStr) {
         try {

@@ -6,7 +6,7 @@ import lombok.Data;
  * C端脚本错误上报请求
  *
  * @author SongLongKuan
- * @date 2025/11/22
+ * date 2025/11/22
  */
 @Data
 public class ConsumerProgramScriptErrorReportReq {

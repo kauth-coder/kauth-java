@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-23
- * @Description: 获取远程变量/数据请求
+ * CreateTime: 2025-09-23
+ * Description: 获取远程变量/数据请求
  */
 @Data
 public class GetRemoteVarReq {

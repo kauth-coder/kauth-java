@@ -11,7 +11,7 @@ import java.util.Base64;
  * 提供公钥/私钥生成、加密、解密功能
  *
  * @author Kauth.cn
- * @date 2025/9/17 20:37
+ * date 2025/9/17 20:37
  */
 public class EccTools {
 
@@ -42,7 +42,6 @@ public class EccTools {
      *
      * @param publicKeyBytes 公钥字节数组
      * @return PublicKey 公钥对象
-     * @throws Exception 异常
      */
     public static PublicKey loadPublicKey(byte[] publicKeyBytes) {
         try {
@@ -59,7 +58,6 @@ public class EccTools {
      *
      * @param privateKeyBytes 私钥字节数组
      * @return PrivateKey 私钥对象
-     * @throws Exception 异常
      */
     public static PrivateKey loadPrivateKey(byte[] privateKeyBytes) {
         try {
@@ -77,7 +75,6 @@ public class EccTools {
      * @param publicKey 公钥
      * @param data      待加密数据
      * @return byte[] 加密后的数据
-     * @throws Exception 异常
      */
     public static byte[] encryptByPublicKey(PublicKey publicKey, byte[] data) {
         try {
@@ -95,7 +92,6 @@ public class EccTools {
      * @param privateKey    私钥
      * @param encryptedData 加密数据
      * @return byte[] 解密后的数据
-     * @throws Exception 异常
      */
     public static byte[] decryptByPrivateKey(PrivateKey privateKey, byte[] encryptedData) {
         try {
@@ -129,7 +125,6 @@ public class EccTools {
      * @param data       原始数据
      * @param signedData 签名数据
      * @return boolean 验证结果
-     * @throws Exception 异常
      */
     public static boolean decryptByPublicKey(PublicKey publicKey, byte[] data, byte[] signedData) {
         try {

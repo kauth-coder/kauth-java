@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-23
- * @Description: 新增远程数据请求
+ * CreateTime: 2025-09-23
+ * Description: 新增远程数据请求
  */
 @Data
 public class RemoteDataAddReq {

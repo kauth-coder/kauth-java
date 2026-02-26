@@ -8,8 +8,8 @@ import java.util.Base64;
 
 /**
  * @author: VerifyHub
- * @CreateTime: 2025-09-28
- * @Description: hmac工具类
+ * CreateTime: 2025-09-28
+ * Description: hmac工具类
  */
 public class HmacTools {
 

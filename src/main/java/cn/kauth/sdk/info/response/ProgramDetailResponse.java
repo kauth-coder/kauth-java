@@ -6,7 +6,7 @@ import lombok.Data;
  * 程序详情响应类
  *
  * @author SongLongKuan
- * @date 2025/4/4 19:35
+ * date 2025/4/4 19:35
  */
 @Data
 public class ProgramDetailResponse {

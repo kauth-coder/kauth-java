@@ -2,7 +2,7 @@ package cn.kauth.sdk.enums;
 
 /**
  * @author Kauth.cn
- * @date 2025/9/17 20:49
+ * date 2025/9/17 20:49
  * 加密签名方式枚举
  */
 public enum KauthSignEnums {

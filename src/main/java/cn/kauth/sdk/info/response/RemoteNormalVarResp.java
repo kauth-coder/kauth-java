@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-23
- * @Description: 远程变量/数据响应
+ * CreateTime: 2025-09-23
+ * Description: 远程变量/数据响应
  */
 @Data
 public class RemoteNormalVarResp {

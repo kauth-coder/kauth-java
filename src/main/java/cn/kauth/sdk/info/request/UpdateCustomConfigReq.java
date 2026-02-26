@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-22
- * @Description: 修改自定义配置请求
+ * CreateTime: 2025-09-22
+ * Description: 修改自定义配置请求
  */
 @Data
 public class UpdateCustomConfigReq {

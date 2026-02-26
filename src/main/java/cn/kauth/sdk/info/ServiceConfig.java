@@ -7,7 +7,7 @@ import lombok.Data;
  * 服务配置
  *
  * @author Kauth.cn
- * @date 2025/9/17 20:51
+ * date 2025/9/17 20:51
  */
 @Data
 public class ServiceConfig {

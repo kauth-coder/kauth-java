@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-08-20
- * @Description: 修改密码请求
+ * CreateTime: 2025-08-20
+ * Description: 修改密码请求
  */
 @Data
 public class ResetPwdRequest {

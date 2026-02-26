@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-08-20
- * @Description: 解绑设备请求（账密方式）
+ * CreateTime: 2025-08-20
+ * Description: 解绑设备请求（账密方式）
  */
 @Data
 public class UnbindDeviceRequest {

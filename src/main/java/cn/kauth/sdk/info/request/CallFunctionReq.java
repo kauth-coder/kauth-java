@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-23
- * @Description: 调用远程函数请求
+ * CreateTime: 2025-09-23
+ * Description: 调用远程函数请求
  */
 @Data
 public class CallFunctionReq {

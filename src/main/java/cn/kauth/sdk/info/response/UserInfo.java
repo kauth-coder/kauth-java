@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-08-20
- * @Description: 用户信息响应
+ * CreateTime: 2025-08-20
+ * Description: 用户信息响应
  */
 @Data
 public class UserInfo {

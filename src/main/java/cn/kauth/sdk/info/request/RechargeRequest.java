@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-08-19
- * @Description: 账户充值请求
+ * CreateTime: 2025-08-19
+ * Description: 账户充值请求
  */
 @Data
 public class RechargeRequest {

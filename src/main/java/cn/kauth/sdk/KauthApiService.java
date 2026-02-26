@@ -12,12 +12,18 @@ public interface KauthApiService {
 
     /**
      * 获取图形验证码
+     *
+     * @param captchaRequest 验证码请求参数
+     * @return 验证码响应结果
      */
     @POST("/api/consumer/user/captcha")
     Call<ApiResult<CaptchaResponse>> getCaptcha(@Body CaptchaRequest captchaRequest);
 
     /**
      * 用户密码登录
+     *
+     * @param pwdLoginRequest 密码登录请求参数
+     * @return 登录响应结果
      */
     @POST("/api/consumer/user/pwdlogin")
     Call<ApiResult<LoginResponse>> pwdLogin(@Body PwdLoginRequest pwdLoginRequest);

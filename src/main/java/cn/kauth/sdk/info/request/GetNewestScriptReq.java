@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-24
- * @Description: 获取最新的脚本
+ * CreateTime: 2025-09-24
+ * Description: 获取最新的脚本
  */
 @Data
 public class GetNewestScriptReq {

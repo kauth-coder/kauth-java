@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 
 /**
  * @author: songlongkuan
- * @CreateTime: 2025-09-24
- * @Description: 获取最新的脚本数据响应
+ * CreateTime: 2025-09-24
+ * Description: 获取最新的脚本数据响应
  */
 @Data
 public class GetNewestScriptResp {
