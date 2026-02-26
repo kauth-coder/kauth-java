@@ -52,7 +52,7 @@ SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获�
 <dependency>
     <groupId>cn.kauth</groupId>
     <artifactId>kauth-java</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
