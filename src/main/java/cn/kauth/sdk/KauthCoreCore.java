@@ -1,6 +1,5 @@
 package cn.kauth.sdk;
 
-import cn.kauth.sdk.enums.KauthSignEnums;
 import cn.kauth.sdk.info.ServiceConfig;
 import cn.kauth.sdk.info.request.InitConfigReq;
 import cn.kauth.sdk.tools.StringUtils;
@@ -37,13 +36,7 @@ public class KauthCoreCore {
         serviceConfig.setProgramId(initConfigReq.getProgramId());
         serviceConfig.setProgramSecret(initConfigReq.getProgramSecret());
         serviceConfig.setMerchantPublicKey(initConfigReq.getMerchantPublicKey());
-        if (Objects.equals("RSA", initConfigReq.getSignType())) {
-            serviceConfig.setKauthSignEnums(KauthSignEnums.SIGN_TYPE_RSA);
-        } else if (Objects.equals("HMAC_SHA256", initConfigReq.getSignType())) {
-            serviceConfig.setKauthSignEnums(KauthSignEnums.SIGN_TYPE_HMAC_SHA256);
-        } else {
-            return "fail:未知的签名类型";
-        }
+        serviceConfig.setKauthSignEnums(initConfigReq.getSignType());
         if (StringUtils.isBlank(serviceConfig.getApiDomain())) {
             serviceConfig.setApiDomain("https://api.kauth.cn");
         }

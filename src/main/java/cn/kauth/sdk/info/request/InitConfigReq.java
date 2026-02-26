@@ -1,5 +1,6 @@
 package cn.kauth.sdk.info.request;
 
+import cn.kauth.sdk.enums.KauthSignEnums;
 import lombok.Data;
 
 @Data
@@ -24,6 +25,6 @@ public class InitConfigReq {
     /**
      * 签名方式
      */
-    private String signType;
+    private KauthSignEnums signType;
 
 }
