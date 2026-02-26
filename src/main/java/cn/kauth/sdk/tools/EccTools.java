@@ -10,7 +10,7 @@ import java.util.Base64;
  * ECC椭圆曲线算法工具类
  * 提供公钥/私钥生成、加密、解密功能
  *
- * @author VerifyHub
+ * @author Kauth.cn
  * @date 2025/9/17 20:37
  */
 public class EccTools {

@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 响应结果
- * @author VerifyHub
+ * @author Kauth.cn
  * @date 2025/9/17 21:10
  */
 @Data

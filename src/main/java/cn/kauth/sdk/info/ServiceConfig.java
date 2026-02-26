@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 服务配置
  *
- * @author VerifyHub
+ * @author Kauth.cn
  * @date 2025/9/17 20:51
  */
 @Data

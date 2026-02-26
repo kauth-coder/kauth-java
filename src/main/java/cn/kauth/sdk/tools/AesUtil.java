@@ -9,7 +9,7 @@ import java.util.Base64;
  * AES加解密工具类
  * 使用ECB模式和零填充
  *
- * @author VerifyHub
+ * @author Kauth.cn
  * @date 2025/4/4
  */
 public class AesUtil {
