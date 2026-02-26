@@ -1,4 +1,5 @@
 package cn.kauth.sdk;
+
 import cn.kauth.sdk.enums.KauthSignEnums;
 import cn.kauth.sdk.info.ServiceConfig;
 import cn.kauth.sdk.info.request.InitConfigReq;
@@ -8,7 +9,6 @@ import java.util.Objects;
 
 public class KauthCoreCore {
 
-    private String deviceId;
 
     private static KauthCoreCore instance = null;
 
@@ -25,7 +25,6 @@ public class KauthCoreCore {
     public static void init(InitConfigReq initConfigReq) {
         instance = new KauthCoreCore();
         instance.initConfig(initConfigReq);
-        instance.deviceId = initConfigReq.getDeviceId();
         KAuthApi.initKauthApi(initConfigReq.getApiDomain());
     }
 
@@ -61,9 +60,6 @@ public class KauthCoreCore {
         return "ok";
     }
 
-    public String getDeviceId() {
-        return deviceId;
-    }
 
     public ServiceConfig getServiceConfig() {
         return serviceConfig;

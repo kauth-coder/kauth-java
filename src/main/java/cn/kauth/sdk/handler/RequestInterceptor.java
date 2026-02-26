@@ -56,8 +56,7 @@ public class RequestInterceptor implements Interceptor {
             encryptedBody = AesUtil.encrypt(plainBody, serviceConfig.getProgramSecret());
         }
         // 生成签名参数
-        String deviceId = kauthCoreCore.getDeviceId();
-        String ka_nonce = deviceId + "_" + UUID.randomUUID().toString().replaceAll("-", "");
+        String ka_nonce = System.currentTimeMillis() + "_" + UUID.randomUUID().toString().replaceAll("-", "");
         long ka_time = System.currentTimeMillis();
 
         // 获取URL路径（用于签名）

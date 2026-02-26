@@ -26,8 +26,4 @@ public class InitConfigReq {
      */
     private String signType;
 
-    /**
-     * 设备 Id
-     */
-    private String deviceId;
 }
