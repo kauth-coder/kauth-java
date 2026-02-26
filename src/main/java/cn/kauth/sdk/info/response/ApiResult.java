@@ -36,7 +36,9 @@ public class ApiResult<T> {
      */
     private String respTime;
 
-
-    public Boolean success;
+    /**
+     * 是否成功
+     */
+    private Boolean success;
 
 }
