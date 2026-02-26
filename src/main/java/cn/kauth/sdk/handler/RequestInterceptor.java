@@ -1,7 +1,7 @@
 package cn.kauth.sdk.handler;
 
 
-import cn.kauth.sdk.KauthCoreCore;
+import cn.kauth.sdk.KauthApi;
 import cn.kauth.sdk.info.ServiceConfig;
 import cn.kauth.sdk.tools.AesUtil;
 import cn.kauth.sdk.tools.SessionManager;
@@ -38,8 +38,7 @@ public class RequestInterceptor implements Interceptor {
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request originalRequest = chain.request();
-        KauthCoreCore kauthCoreCore = KauthCoreCore.getInstance();
-        ServiceConfig serviceConfig = kauthCoreCore.getServiceConfig();
+        ServiceConfig serviceConfig = KauthApi.getServiceConfig();
         // 获取原始请求体
         String originalBody = "";
         if (originalRequest.body() != null) {

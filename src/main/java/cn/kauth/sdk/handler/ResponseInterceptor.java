@@ -1,7 +1,7 @@
 package cn.kauth.sdk.handler;
 
 
-import cn.kauth.sdk.KauthCoreCore;
+import cn.kauth.sdk.KauthApi;
 import cn.kauth.sdk.info.ServiceConfig;
 import cn.kauth.sdk.info.response.ParseResult;
 import cn.kauth.sdk.tools.AesUtil;
@@ -89,8 +89,7 @@ public class ResponseInterceptor implements Interceptor {
         if (System.currentTimeMillis() - serverTime >= TIMESTAMP_RECENT) {
             throw new IOException("请求超时");
         }
-        KauthCoreCore kauthCoreCore = KauthCoreCore.getInstance();
-        ServiceConfig serviceConfig = kauthCoreCore.getServiceConfig();
+        ServiceConfig serviceConfig = KauthApi.getServiceConfig();
         // 解密响应体
         String decryptedBody = null;
         if (StringUtils.isNotBlank(parseResult.getData())) {

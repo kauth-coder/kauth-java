@@ -139,7 +139,7 @@ public interface KauthApiService {
     /**
      * 报告脚本错误
      */
-    @POST("/api/consumer/scriptError/report")
+    @POST("/api/consumer/scripterror/report")
     Call<ApiResult<Void>> reportScriptError(@Body ConsumerProgramScriptErrorReportReq scriptErrorReportReq);
 
     // ==================== 设备管理模块 ====================
@@ -200,5 +200,4 @@ public interface KauthApiService {
      */
     @POST("/api/remote/scriptDownloadV2")
     Call<ApiResult<RemoteScriptDownloadResp>> scriptDownloadV2(@Body ScriptDownloadReq scriptDownloadReq);
-
 }
