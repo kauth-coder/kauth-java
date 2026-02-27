@@ -51,7 +51,7 @@ https://github.com/kauth-coder/kauth-android
 
 ## 加载依赖
 
-您可以在 [Maven Central](https://central.sonatype.com/artifact/cn.kauth/kauth-java/) 查看最新版本。
+您可以在 [Maven Central](https://central.sonatype.com/artifact/cn.kauth/kauth-java/) 查看最新版本。 [![Maven Central](https://img.shields.io/maven-central/v/cn.kauth/kauth-java)](https://central.sonatype.com/artifact/cn.kauth/kauth-java)
 
 ### Maven
 
