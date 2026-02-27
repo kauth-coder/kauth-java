@@ -1,9 +1,6 @@
 package cn.kauth.sdk.info.response;
 
-import com.google.gson.annotations.JsonAdapter;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 /**
  * @author: songlongkuan
@@ -20,9 +17,9 @@ public class UserInfo {
 
     /**
      * 服务到期时间
+     * 年-月-日 时:分:秒
      */
-    @JsonAdapter(LocalDateTimeTypeAdapter.class)
-    private LocalDateTime serverExpireTime;
+    private String serverExpireTime;
 
     /**
      * 服务剩余使用次数

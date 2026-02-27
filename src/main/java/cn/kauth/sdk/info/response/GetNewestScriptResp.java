@@ -2,8 +2,6 @@ package cn.kauth.sdk.info.response;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 /**
  * @author: songlongkuan
  * CreateTime: 2025-09-24
@@ -34,6 +32,7 @@ public class GetNewestScriptResp {
 
     /**
      * 脚本发布时间
+     * 年-月-日 时:分:秒
      */
-    private LocalDateTime scriptReleaseTime;
+    private String scriptReleaseTime;
 }
