@@ -41,6 +41,12 @@ SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获�
     - `getNewestScript`: 获取最新脚本
     - `scriptDownloadV2`: 脚本下载V2
 
+## Android版本工程
+
+> 使用的是同一套 SDK
+
+https://github.com/kauth-coder/kauth-android
+
 ## 加载依赖
 
 您可以在 [Maven Central](https://central.sonatype.com/artifact/cn.kauth/kauth-java/) 查看最新版本。
@@ -54,7 +60,7 @@ SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获�
 <dependency>
     <groupId>cn.kauth</groupId>
     <artifactId>kauth-java</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
@@ -63,7 +69,7 @@ SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获�
 在 `build.gradle` 中添加：
 
 ```gradle
-implementation 'cn.kauth:kauth-java:1.0.2'
+implementation 'cn.kauth:kauth-java:1.0.3'
 ```
 
 ## 初始化
@@ -144,14 +150,18 @@ String appName = "Java-APP1"; //当前应用名称，自定义
 String deviceId = "123456"; //设备 ID，请自行依据运行的环境（mac、Window、Linux 等等生成设备 Id）
 GlobalExceptionHandler globalExceptionHandler = new GlobalExceptionHandler(appName, deviceId);
 //当有线程产生 Exception 异常的时候，将会上报给服务器
-Thread.setDefaultUncaughtExceptionHandler(globalExceptionHandler);
+Thread.
+
+setDefaultUncaughtExceptionHandler(globalExceptionHandler);
 ```
 
 ## 自动心跳
 
 ```java
 int maxConnFail = 3; //允许最大失败次数（比如网络抖动等可能会发生心跳失败，你可以输入一个你能接受的最大失败次数，比如 10次）
-KauthApi.startAutoPong(maxConnFail, new PongCallback() {
+KauthApi.
+
+startAutoPong(maxConnFail, new PongCallback() {
     @Override
     public void callback (PongFailEnums pongFailEnums, String rason){
         System.out.println("心跳失败:" + pongFailEnums.getValue() + "," + rason);
