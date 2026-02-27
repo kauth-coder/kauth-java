@@ -63,7 +63,7 @@ SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获�
 在 `build.gradle` 中添加：
 
 ```gradle
-implementation 'cn.kauth:kauth-java:1.0.1'
+implementation 'cn.kauth:kauth-java:1.0.2'
 ```
 
 ## 初始化
