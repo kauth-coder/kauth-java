@@ -141,21 +141,15 @@ public class Main {
 String appName = "Java-APP1"; //当前应用名称，自定义
 String deviceId = "123456"; //设备 ID，请自行依据运行的环境（mac、Window、Linux 等等生成设备 Id）
 GlobalExceptionHandler globalExceptionHandler = new GlobalExceptionHandler(appName, deviceId);
-Thread.
-
-setDefaultUncaughtExceptionHandler(globalExceptionHandler);
-
-
 //当有线程产生 Exception 异常的时候，将会上报给服务器
+Thread.setDefaultUncaughtExceptionHandler(globalExceptionHandler);
 ```
 
 ## 自动心跳
 
 ```java
-        int maxConnFail = 3; //允许最大失败次数（比如网络抖动等可能会发生心跳失败，你可以输入一个你能接受的最大失败次数，比如 10次）
-        KauthApi.
-
-startAutoPong(maxConnFail, new PongCallback() {
+int maxConnFail = 3; //允许最大失败次数（比如网络抖动等可能会发生心跳失败，你可以输入一个你能接受的最大失败次数，比如 10次）
+KauthApi.startAutoPong(maxConnFail, new PongCallback() {
     @Override
     public void callback (PongFailEnums pongFailEnums, String rason){
         System.out.println("心跳失败:" + pongFailEnums.getValue() + "," + rason);
