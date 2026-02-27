@@ -1,5 +1,7 @@
 # KAuth Java SDK
 
+> 官网: https://kauth.cn
+
 本SDK由 Java8 开发的网络验证客户端 SDK，用于 Java、Android 构建您的收费软件。
 SDK 提供了丰富的功能模块，通过 `KAuthApi.getKauthApiService()` 获取服务实例后即可调用：
 
