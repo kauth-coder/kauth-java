@@ -52,7 +52,10 @@ public class ResponseInterceptor implements Interceptor {
         } catch (JsonSyntaxException e) {
             throw new IOException("服务器返回的数据格式错误: " + e.getMessage());
         }
-
+        if (Objects.isNull(parseResult)) {
+            System.out.println("解析数据失败,rawData:" + responseBodyString + " rawCode:" + originalResponse.code());
+            return createResponse(originalResponse, responseBodyString);
+        }
         // 如果请求不成功，直接返回原始响应
         if (!parseResult.getSuccess()) {
             return createResponse(originalResponse, responseBodyString);
