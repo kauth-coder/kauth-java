@@ -155,49 +155,49 @@ public interface KauthApiService {
     /**
      * 获取远程变量
      */
-    @POST("/api/remote/getRemoteVar")
+    @POST("/api/consumer/remote/getRemoteVar")
     Call<ApiResult<RemoteNormalVarResp>> getRemoteVar(@Body GetRemoteVarReq getRemoteVarReq);
 
     /**
      * 获取远程数据
      */
-    @POST("/api/remote/getRemoteData")
+    @POST("/api/consumer/remote/getRemoteData")
     Call<ApiResult<RemoteNormalVarResp>> getRemoteData(@Body GetRemoteVarReq getRemoteVarReq);
 
     /**
      * 添加远程数据
      */
-    @POST("/api/remote/addRemoteData")
+    @POST("/api/consumer/remote/addRemoteData")
     Call<ApiResult<Void>> addRemoteData(@Body RemoteDataAddReq remoteDataAddReq);
 
     /**
      * 更新远程数据
      */
-    @POST("/api/remote/updateRemoteData")
+    @POST("/api/consumer/remote/updateRemoteData")
     Call<ApiResult<Void>> updateRemoteData(@Body RemoteDataUpdateReq remoteDataUpdateReq);
 
     /**
      * 删除远程数据
      */
-    @POST("/api/remote/deleteRemoteData")
+    @POST("/api/consumer/remote/deleteRemoteData")
     Call<ApiResult<Void>> deleteRemoteData(@Body RemoteDataDeleteReq remoteDataDeleteReq);
 
     /**
      * 调用函数
      */
-    @POST("/api/remote/callFunction")
+    @POST("/api/consumer/remote/callFunction")
     Call<ApiResult<CallFunctionResp>> callFunction(@Body CallFunctionReq callFunctionReq);
 
     /**
      * 获取最新脚本
      */
-    @POST("/api/remote/getNewestScript")
+    @POST("/api/consumer/remote/getNewestScript")
     Call<ApiResult<GetNewestScriptResp>> getNewestScript(@Body GetNewestScriptReq getNewestScriptReq);
 
 
     /**
      * 脚本下载V2
      */
-    @POST("/api/remote/scriptDownloadV2")
+    @POST("/api/consumer/remote/scriptDownloadV2")
     Call<ApiResult<RemoteScriptDownloadResp>> scriptDownloadV2(@Body ScriptDownloadReq scriptDownloadReq);
 }
