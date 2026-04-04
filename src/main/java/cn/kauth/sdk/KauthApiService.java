@@ -189,15 +189,14 @@ public interface KauthApiService {
     Call<ApiResult<CallFunctionResp>> callFunction(@Body CallFunctionReq callFunctionReq);
 
     /**
-     * 获取最新脚本
+     * 获取最新脚本版本
      */
     @POST("/api/consumer/remote/getNewestScript")
     Call<ApiResult<GetNewestScriptResp>> getNewestScript(@Body GetNewestScriptReq getNewestScriptReq);
 
-
     /**
-     * 脚本下载V2
+     * 获取脚本的临时下载地址，可指定版本
      */
-    @POST("/api/consumer/remote/scriptDownloadV2")
+    @POST("/api/consumer/remote/getScriptDownloadv2")
     Call<ApiResult<RemoteScriptDownloadResp>> scriptDownloadV2(@Body ScriptDownloadReq scriptDownloadReq);
 }
