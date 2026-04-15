@@ -197,6 +197,6 @@ public interface KauthApiService {
     /**
      * 获取脚本的临时下载地址，可指定版本
      */
-    @POST("/api/consumer/remote/getScriptDownloadv2")
+    @POST("/api/consumer/remote/getScriptDownload")
     Call<ApiResult<RemoteScriptDownloadResp>> scriptDownloadV2(@Body ScriptDownloadReq scriptDownloadReq);
 }

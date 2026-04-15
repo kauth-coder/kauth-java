@@ -47,10 +47,11 @@ public class KauthApi {
      *
      * @param baseUrl API基础URL
      */
-    public static void initKauthApi(String baseUrl) {
+    private static void initKauthApi(String baseUrl) {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new RequestInterceptor())
                 .addInterceptor(new ResponseInterceptor())
+                .writeTimeout(15, TimeUnit.SECONDS)
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .build();
