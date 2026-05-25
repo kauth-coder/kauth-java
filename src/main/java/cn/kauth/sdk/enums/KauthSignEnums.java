@@ -6,9 +6,9 @@ package cn.kauth.sdk.enums;
  * 加密签名方式枚举
  */
 public enum KauthSignEnums {
-    SIGN_TYPE_RSA("RSA"),
-    SIGN_TYPE_ECC("ECC"),
-    SIGN_TYPE_HMAC_SHA256("HMAC_SHA256"),
+    SIGN_TYPE_RSA("RSA_V2"),
+    SIGN_TYPE_ECC("ECC_V2"),
+    SIGN_TYPE_HMAC_SHA256("HMAC_SHA256_V2"),
     ;
 
     private final String value;

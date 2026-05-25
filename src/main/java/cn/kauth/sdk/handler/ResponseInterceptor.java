@@ -80,7 +80,6 @@ public class ResponseInterceptor implements Interceptor {
         if (StringUtils.isBlank(responseSignType)) {
             throw new IOException("服务器的 responseSignType 数据是空的");
         }
-
         // 验证时间戳
         long serverTime;
         try {
@@ -88,7 +87,6 @@ public class ResponseInterceptor implements Interceptor {
         } catch (NumberFormatException e) {
             throw new IOException("服务器时间戳格式错误");
         }
-
         if (System.currentTimeMillis() - serverTime >= TIMESTAMP_RECENT) {
             throw new IOException("请求超时");
         }
@@ -101,7 +99,7 @@ public class ResponseInterceptor implements Interceptor {
                 throw new IOException("响应体解密失败");
             }
         }
-
+        String requestNonce = chain.request().header(NONCE);
         // 验证服务器签名
         String url = chain.request().url().encodedPath();
         boolean verifyResponseSign = SignTools.verifyResponseSign(
@@ -110,34 +108,42 @@ public class ResponseInterceptor implements Interceptor {
                 decryptedBody,
                 responseNonce,
                 serverTime,
-                responseSign
+                responseSign,
+                parseResult.getCode(),
+                requestNonce
         );
-
         if (!verifyResponseSign) {
-            throw new IOException("服务器签名验证失败");
-        }
-
-        // 构建新的响应体
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("msg", parseResult.getMsg());
-        jsonObject.addProperty("code", parseResult.getCode());
-        jsonObject.addProperty("traceId", parseResult.getTraceId());
-        jsonObject.addProperty("elapse", parseResult.getElapse());
-        jsonObject.addProperty("respTime", parseResult.getRespTime());
-        jsonObject.addProperty("success", Objects.equals(200, parseResult.getCode()));
-
-        // 添加解密后的数据
-        if (StringUtils.isNotBlank(decryptedBody)) {
-            try {
-                JsonObject dataJson = gson.fromJson(decryptedBody, JsonObject.class);
-                jsonObject.add("data", dataJson);
-            } catch (JsonSyntaxException e) {
-                throw new IOException("服务器返回data不是json字符串");
+            // 构建新的响应体
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("msg", "数据签名验证失败");
+            jsonObject.addProperty("code", 0);
+            jsonObject.addProperty("traceId", parseResult.getTraceId());
+            jsonObject.addProperty("elapse", parseResult.getElapse());
+            jsonObject.addProperty("respTime", parseResult.getRespTime());
+            jsonObject.addProperty("success", false);
+            String newResponseBody = jsonObject.toString();
+            return createResponse(originalResponse, newResponseBody);
+        } else {
+            // 构建新的响应体
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("msg", parseResult.getMsg());
+            jsonObject.addProperty("code", parseResult.getCode());
+            jsonObject.addProperty("traceId", parseResult.getTraceId());
+            jsonObject.addProperty("elapse", parseResult.getElapse());
+            jsonObject.addProperty("respTime", parseResult.getRespTime());
+            jsonObject.addProperty("success", Objects.equals(200, parseResult.getCode()));
+            // 添加解密后的数据
+            if (StringUtils.isNotBlank(decryptedBody)) {
+                try {
+                    JsonObject dataJson = gson.fromJson(decryptedBody, JsonObject.class);
+                    jsonObject.add("data", dataJson);
+                } catch (JsonSyntaxException e) {
+                    throw new IOException("服务器返回data不是json字符串");
+                }
             }
+            String newResponseBody = jsonObject.toString();
+            return createResponse(originalResponse, newResponseBody);
         }
-
-        String newResponseBody = jsonObject.toString();
-        return createResponse(originalResponse, newResponseBody);
     }
 
     /**

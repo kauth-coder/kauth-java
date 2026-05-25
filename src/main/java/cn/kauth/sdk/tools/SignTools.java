@@ -44,4 +44,22 @@ public class SignTools {
         return false;
     }
 
+
+    public static boolean verifyResponseSign(ServiceConfig serviceConfig, String url, String body, String nonce, long time, String sign, Integer code, String requestNonce) {
+        String signTemplate = "url:" + url + "\nbody:" + (Objects.isNull(body) ? "" : body) + "\nnonce:" + nonce + "\ntime:" + time + "\ncode:" + code + "\nrequestNonce:" + requestNonce;
+        String mded5 = Md5Tools.md5(signTemplate);
+        switch (serviceConfig.getKauthSignEnums()) {
+            case SIGN_TYPE_ECC:
+                PublicKey merchantPublicKey = EccTools.loadPublicKey(Base64.getDecoder().decode(serviceConfig.getMerchantPublicKey()));
+                return EccTools.decryptByPublicKey(merchantPublicKey, mded5.getBytes(StandardCharsets.UTF_8), Base64.getDecoder().decode(sign));
+            case SIGN_TYPE_RSA:
+                String decryptSign = RsaTools.decryptByPublicKey(sign, serviceConfig.getMerchantPublicKey());
+                return Objects.equals(decryptSign, mded5);
+            case SIGN_TYPE_HMAC_SHA256:
+                return HmacTools.verifyWithHmacSHA256(mded5, serviceConfig.getMerchantPublicKey(), sign);
+        }
+        return false;
+
+    }
+
 }
