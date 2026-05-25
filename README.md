@@ -62,7 +62,7 @@ https://github.com/kauth-coder/kauth-android
 <dependency>
     <groupId>cn.kauth</groupId>
     <artifactId>kauth-java</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.7</version>
 </dependency>
 ```
 
@@ -71,7 +71,7 @@ https://github.com/kauth-coder/kauth-android
 在 `build.gradle` 中添加：
 
 ```gradle
-implementation 'cn.kauth:kauth-java:1.0.3'
+implementation 'cn.kauth:kauth-java:1.0.7'
 ```
 
 ## 初始化
