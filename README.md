@@ -51,7 +51,7 @@ https://github.com/kauth-coder/kauth-android
 
 ## 加载依赖
 
-您可以在 [Maven Central](https://central.sonatype.com/artifact/cn.kauth/kauth-java/) 查看最新版本。 [![Maven Central](https://img.shields.io/maven-central/v/cn.kauth/kauth-java)](https://central.sonatype.com/artifact/cn.kauth/kauth-java)
+您可以在 [Maven Central](https://central.sonatype.com/artifact/cn.kauth/kauth-java/) 查看最新版本 -> [![Maven Central](https://img.shields.io/maven-central/v/cn.kauth/kauth-java)](https://central.sonatype.com/artifact/cn.kauth/kauth-java)
 
 ### Maven
 
@@ -62,7 +62,7 @@ https://github.com/kauth-coder/kauth-android
 <dependency>
     <groupId>cn.kauth</groupId>
     <artifactId>kauth-java</artifactId>
-    <version>1.0.7</version>
+    <version>${lastversion}</version>
 </dependency>
 ```
 
@@ -71,7 +71,7 @@ https://github.com/kauth-coder/kauth-android
 在 `build.gradle` 中添加：
 
 ```gradle
-implementation 'cn.kauth:kauth-java:1.0.7'
+implementation 'cn.kauth:kauth-java:${lastversion}'
 ```
 
 ## 初始化
