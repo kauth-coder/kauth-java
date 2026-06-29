@@ -199,4 +199,35 @@ public interface KauthApiService {
      */
     @POST("/api/consumer/remote/getScriptDownload")
     Call<ApiResult<RemoteScriptDownloadResp>> scriptDownloadV2(@Body ScriptDownloadReq scriptDownloadReq);
+
+
+    //-------------云控相关的接口
+
+    /**
+     * 获取指定云控服务信息
+     *
+     * @param mqttServiceConfigReq
+     * @return
+     */
+    @POST("/api/consumer/cloud/monitor/serverDetail")
+    ApiResult<MqttServiceConfigResp> serverDetail(@Body MqttServiceConfigReq mqttServiceConfigReq);
+
+    /**
+     * 默认云控服务信息
+     *
+     * @return
+     */
+    @POST("/api/consumer/cloud/monitor/defaultServerDetail")
+    ApiResult<MqttServiceConfigResp> defaultServerDetail();
+
+    /**
+     * 云 UI 信息
+     *
+     * @param cloudUiReq
+     * @return
+     */
+    @POST("/api/consumer/cloud/monitor/cloudUiDetail")
+    ApiResult<MqttTaskTemplateResp> cloudUiDetail(@Body CloudUiReq cloudUiReq);
+
+
 }
